@@ -14,6 +14,8 @@ app.use('/api',users);
 
 //mongoose connection with mongodb
 let mongoose = require('mongoose');
-mongoose.connect(mongourl,{useNewUrlParser : true,useUnifiedTopology : true});
+mongoose.connect(mongourl,{useNewUrlParser : true,useUnifiedTopology : true})
+.then(()=>{app.listen(port,()=>{console.log("started")})})
+.catch((err)=>{console.log(err.message)})
 
-app.listen(port,()=>{console.log("started")});
+
