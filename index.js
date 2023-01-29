@@ -14,6 +14,6 @@ app.use('/api',users);
 
 //mongoose connection with mongodb
 let mongoose = require('mongoose');
-mongoose.connect(mongourl);
+mongoose.connect(mongourl,{useNewUrlParser : true,useUnifiedTopology : true});
 
 app.listen(port,()=>{console.log("started")});
